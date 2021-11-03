@@ -15,16 +15,16 @@ public class CommonActions {
     public static WebDriver createDriver(){
             WebDriver driver = null;
             switch (BROWSER){
-                case "chrome" :
-                    System.setProperty("webdriwer.chrome.driver", "src/main/resources/chromedriver.exe");
+                case "CHROME" :
+                    System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
                     driver = new ChromeDriver();
                     break;
                 case "MOZILLA" :
-                    System.setProperty("webdriwer.gecko.driver", "src/main/resources/geckodriver.exe");
+                    System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
                     driver = new FirefoxDriver();
                     break;
                 case "OPERA" :
-                    System.setProperty("webdriwer.opera.driver", "src/main/resources/operadriver.exe");
+                    System.setProperty("webdriver.opera.driver", "src/main/resources/operadriver.exe");
                     driver = new OperaDriver();
                     break;
                 default:

@@ -17,6 +17,10 @@
         <!--JUnit 5-->
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
         <junit.platform.version>1.6.2</junit.platform.version>
+
+            <maven.compiler.source>16</maven.compiler.source>
+            <maven.compiler.target>16</maven.compiler.target>
+
     </properties>
 
 
@@ -55,12 +59,15 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
+
 
 </project>

@@ -22,9 +22,8 @@ public class BasePage {
     /**
      *Wait for visibility elements
      */
-    public WebElement waitElementIsVisible(WebElement element){
+    public void waitElementIsVisible(WebElement element){
         new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
-        return element;
     }
 
 }

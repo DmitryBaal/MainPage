@@ -11,10 +11,10 @@ public class Config {
     /**
      * Clean cookies after test
      */
-    public static final Boolean CLEAR_COOKIES = false;
+    public static final Boolean CLEAR_COOKIES = true;
     /**
      * Keep browser open after tests
      */
-    public static final Boolean HOLD_BROWSER_OPEN = true;
+    public static final Boolean CLOSE_BROWSER = false;
 
 }

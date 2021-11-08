@@ -5,7 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 import static constants.Constants.TimeoutVariables.EXPLICIT_WAIT;
+import static constants.Constants.TimeoutVariables.IMPLICIT_WAIT;
 
 public class BasePage {
     public WebDriver driver;
@@ -26,12 +29,15 @@ public class BasePage {
         new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
     }
 
-
-
-
     /**
      * Wait
      */
+public void waitImplicit (){
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);;
+}
+
+
+
 
 
 

@@ -1,41 +1,46 @@
 package common;
 
-import javax.annotation.RegEx;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static constants.Constants.ErrorsMessages.REG_EX_SECOND_AUTHORIZATION_FAIL;
 
 public class SupportingMethods {
 
     public class RandomWord {
 
-        public static String generateRandomString(int length) {
-            Random r = new Random();
-            StringBuffer sb = new StringBuffer();
-            while (sb.length() < length) {
-                sb.append(Integer.toHexString(r.nextInt()));
+        public static String generateRandomString(int lineLength) {
+            Random randomString = new Random();
+            StringBuffer newLetter = new StringBuffer();
+            while (newLetter.length() < lineLength) {
+                newLetter.append(Integer.toHexString(randomString.nextInt()));
             }
-            return sb.toString().substring(0, length);
+            return newLetter.toString().substring(0, lineLength);
         }
     }
 
 
-    public static void main(String[] args) {
-        String  a = null;
-        String text = "Вы ввели неправильный логин / пароль 3 раза. В целях безопасности вход в систему ограничен. Повторите попытку через 14 мин 18 сек.";
-        Pattern pattern = Pattern.compile("(\\D{2})");
-        Matcher matcher = pattern.matcher(text);
-        boolean kek=false;
-        while (matcher.find()) {
-            System.out.println(a = text.substring(matcher.start(), matcher.end()));
-        }
-        if (a == text)
-            kek = true ;
-        System.out.println(a + "\n" + text);
-        System.out.print(kek);
-    }
+    public class RegExFindElement {
+        public static boolean regExFind(String takenText, String receivedText, String regExpression){
+             // takenText Текст взятый из элемента на странице
+            boolean resultat=false;
+            Pattern pattern = Pattern.compile(regExpression); //Регулярное выражение
+            Matcher matcher = pattern.matcher(takenText);
+            while (matcher.find()) {
+                receivedText = takenText.substring(matcher.start(), matcher.end());
+            }
+            if (receivedText == (takenText))
+            { resultat = true;}
+            else
+            {
+                if (receivedText == null){
+                    System.out.println("Check RegEx");}
+                else{
+                    System.out.println("Expected: " + takenText);
+                    System.out.println("Actual: " + receivedText);}
+            }
+            return resultat;
 
+        }
+    }
 
 }

@@ -2,6 +2,7 @@ package pages.authorization;
 
 
 
+import common.SupportingMethods;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -77,62 +78,20 @@ public class AuthorizationPage extends BasePage {
     }
 
     /**
-     * Third validation message wrong log/pass
+     * variables for regEfind
+     * 1. get text from web element
+     * 2. received Text is null
+     * @param regExpression
      * @return
      */
-    public AuthorizationPage errorMsgFieldThree() {
+    public AuthorizationPage errorMsgExperiment(String regExpression){
         waitElementIsVisible(driver.findElement(errorMsgField));
         WebElement details = driver.findElement(errorMsgField);
-        String takenText = details.getText(); //  Текст взятый из элемента на странице
-        Pattern pattern = Pattern.compile(REG_EX_SECOND_AUTHORIZATION_FAIL); //Регулярное выражение
-        Matcher matcher = pattern.matcher(takenText);
-        String elementstext = null;
-        boolean resultat=false;
-        while (matcher.find()) {
-            elementstext = takenText.substring(matcher.start(), matcher.end());
-        }
-        if (elementstext == (takenText))
-        { resultat = true;}
-        else
-        {
-            if (elementstext == null){
-                System.out.println("Check RegEx");}
-            else{
-                System.out.println("Expected: " + takenText);
-                System.out.println("Actual: " + elementstext);}
-        }
-        Assertions.assertTrue(resultat);
+        Assertions.assertTrue(SupportingMethods.RegExFindElement.regExFind(details.getText(), null,regExpression));
         return this;
     }
 
-    /**
-     * Fourth validation message wrong log/pass
-     * @return
-     */
-    public AuthorizationPage errorMsgFieldFour() {
-        waitElementIsVisible(driver.findElement(errorMsgField));
-        WebElement details = driver.findElement(errorMsgField);
-        String takenText = details.getText(); //  Текст взятый из элемента на странице
-        Pattern pattern = Pattern.compile(REG_EX_THIRD_AUTHORIZATION_FAIL); //Регулярное выражение
-        Matcher matcher = pattern.matcher(takenText);
-        String elementstext = null;
-        boolean resultat=false;
-        while (matcher.find()) {
-            elementstext = takenText.substring(matcher.start(), matcher.end());
-        }
-        if (elementstext == (takenText))
-        { resultat = true;}
-            else
-                {
-                if (elementstext == null){
-                System.out.println("Check RegEx");}
-                     else{
-                         System.out.println("Expected: " + takenText);
-                         System.out.println("Actual: " + elementstext);}
-                }
-        Assertions.assertTrue(resultat);
-        return this;
-    }
+
 
 }
 

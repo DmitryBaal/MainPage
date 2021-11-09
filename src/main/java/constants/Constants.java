@@ -13,7 +13,7 @@ public class Constants {
     }
     public static class AuthorizationTestData {
         public static final String AUTHORIZATION_LOGIN = SupportingMethods.RandomWord.generateRandomString(8);
-       // public static final String AUTHORIZATION_LOGIN = "TESTERmkb14";
+       // public static final String AUTHORIZATION_LOGIN = "TESTERmkb";
         public static final String INVALID_PASSWORD = "!Q2w3e4r";
     }
 
@@ -23,6 +23,7 @@ public class Constants {
         public static final String SECOND_AUTHORIZATION_FAIL = "Вы ввели неправильный логин / пароль 3 раза. В целях безопасности вход в систему ограничен. Повторите попытку через 14 мин 59 сек.";
         public static final String REG_EX_SECOND_AUTHORIZATION_FAIL = "(\\D{2})\\s(\\D{5})\\s(\\D{12})\\s(\\D{5})\\s.\\s(\\D{6})\\s\\d\\s(\\D{4}).\\s(\\D)\\s(\\D{5})\\s(\\D{12})\\s(\\D{4})\\s(\\D)\\s(\\D{7})\\s(\\D{9}).\\s(\\D{9})\\s(\\D{7})\\s(\\D{5})\\s(\\d{2})\\s(\\D{3})\\s(\\d{2})\\s(\\D{3}).";
         public static final String REG_EX_THIRD_AUTHORIZATION_FAIL = "(\\D{5})\\s(\\D{2})\\s(\\D{5})\\s(\\D{12})\\s(\\D{5})\\s.\\s(\\D{6})\\s\\d\\s(\\D{4}).\\s(\\D)\\s(\\D{5})\\s(\\D{12})\\s(\\D{4})\\s(\\D)\\s(\\D{7})\\s(\\D{9}).\\s(\\D{9})\\s(\\D{7})\\s(\\D{5})\\s(\\d{2})\\s(\\D{3})\\s(\\d{2})\\s(\\D{3}).";
+        public static final String SECOND_AUTHORIZATION_FAIL2 = "Вы ввели неправильный логин / пароль 3 раза. В целях безопасности вход в систему ограничен. Повторите попытку через (\\d{2}) мин (\\d{2}) сек.";
 
     }
 

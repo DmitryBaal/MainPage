@@ -1,97 +1,45 @@
 package pages.authorization;
 
-
-
-import common.SupportingMethods;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import pages.base.BasePage;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static constants.Constants.ErrorsMessages.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationPage extends BasePage {
 
-    public AuthorizationPage(WebDriver driver) {
-        super(driver);
-    }
+    private final SelenideElement inputLogin = $("input[name=txtLogin]");
+    private final SelenideElement inputPass = $("input[name=txtPassword]");
+    private final SelenideElement buttonLogin = $("div#btnLoginStandard.btn");
+    private final SelenideElement errorMsgField = $("div#errMessage.errmsg.login2");
+    private final SelenideElement errorMsgField2 = $("div#errMessage.errmsg.login-password");
 
-    private final By inputLogin = By.cssSelector("input[name=txtLogin]");
-    private final By inputPass = By.cssSelector("input[name=txtPassword]");
-    private final By buttonLogin = By.cssSelector("div#btnLoginStandard.btn");
-    private final By errorMsgField = By.cssSelector("div#errMessage.errmsg");
-   // private final By errorMsgField3 = By.cssSelector("div#errMessage.errmsg.login-password");
-
-    /**
-     * Input login
-     * @param login
-     * @return
-     */
+    /** Input login */
     public AuthorizationPage inputLogin(String login) {
-        driver.findElement(inputLogin).sendKeys(login);
+        clearAndType(inputLogin, login);
         return this;
     }
 
-    /**
-     * Clear Login field
-     * @return
-     */
-    public AuthorizationPage clearLogin(){
-        driver.findElement(inputLogin).clear();
-        return this;
-    }
-
-    /**
-     * Enter Password
-     * @param password
-     */
+    /** Enter Password*/
     public AuthorizationPage inputPass(String password) {
-        waitElementIsVisible(driver.findElement(inputPass));
-        driver.findElement(inputPass).sendKeys(password);
+        clearAndType(inputPass, password);
         return this;
     }
 
-    /**
-     * Click button "Вход"
-     */
+    /** Click button "Вход" */
     public AuthorizationPage selectButtonLogin() {
-        waitElementIsVisible(driver.findElement(buttonLogin));
-        driver.findElement(buttonLogin).click();
+        buttonLogin.shouldBe(Condition.visible).click();
         return this;
     }
 
-    /**
-     * First and Second validation message wrong log/pass
-     * @param msgText
-     * @return
-     */
+    /** First and Second validation message wrong log/pass */
     public AuthorizationPage errorMsgField(String msgText) {
-        waitElementIsVisible(driver.findElement(errorMsgField));
-        WebElement details = driver.findElement(errorMsgField);
-        Assertions.assertEquals(msgText, details.getText());
+        errorMsgField.shouldBe(Condition.visible).shouldHave(Condition.text(msgText));
+        return this;
+        }
+    /** variables for regExfind */
+    public AuthorizationPage errorMsgField2(String msgText) {
+        errorMsgField2.shouldBe(Condition.visible).should(Condition.matchText(msgText));
         return this;
     }
-
-    /**
-     * variables for regEfind
-     * 1. get text from web element
-     * 2. received Text is null
-     * @param regExpression
-     * @return
-     */
-    public AuthorizationPage errorMsgExperiment(String regExpression){
-        waitElementIsVisible(driver.findElement(errorMsgField));
-        WebElement details = driver.findElement(errorMsgField);
-        Assertions.assertTrue(SupportingMethods.RegExFindElement.regExFind(details.getText(), null,regExpression));
-        return this;
-    }
-
-
-
 }
 

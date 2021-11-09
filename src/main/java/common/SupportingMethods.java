@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class SupportingMethods {
 
-    public class RandomWord {
+    public static class RandomWord {
 
         public static String generateRandomString(int lineLength) {
             Random randomString = new Random();

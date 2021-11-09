@@ -1,42 +1,20 @@
 package pages.base;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
-
-import static constants.Constants.TimeoutVariables.EXPLICIT_WAIT;
-import static constants.Constants.TimeoutVariables.IMPLICIT_WAIT;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
+import static com.codeborne.selenide.Selenide.*;
 
 public class BasePage {
-    public WebDriver driver;
-
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-    }
 
     /**
      * Method for open URL
      */
     public void openUrl(String url) {
-        driver.get(url);
+        open(url);
     }
 
-    /**
-     * Wait for visibility elements
-     */
-    public void waitElementIsVisible(WebElement element) {
-        new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
+    protected void clearAndType(SelenideElement element, String value){
+        while (!element.getAttribute("value").equals((""))) element.sendKeys((Keys.BACK_SPACE));
+        element.sendKeys(value);
     }
-
-    /**
-     * Wait
-     */
-    public void waitImplicit() {
-        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
-    }
-
-
 }

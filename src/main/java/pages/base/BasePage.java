@@ -12,7 +12,6 @@ public class BasePage {
     public void openUrl(String url) {
         open(url);
     }
-
     protected void clearAndType(SelenideElement element, String value){
         while (!element.getAttribute("value").equals((""))) element.sendKeys((Keys.BACK_SPACE));
         element.sendKeys(value);

@@ -6,7 +6,6 @@ import static common.Config.CLEAR_COOKIES;
 
 public class CommonActions {
 
-
     public static void clearBrowserCookies(){
         if(CLEAR_COOKIES){
             Selenide.clearBrowserCookies();

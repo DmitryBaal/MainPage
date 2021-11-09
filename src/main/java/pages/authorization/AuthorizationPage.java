@@ -19,7 +19,7 @@ public class AuthorizationPage extends BasePage {
         return this;
     }
 
-    /** Enter Password*/
+    /** Enter Password */
     public AuthorizationPage inputPass(String password) {
         clearAndType(inputPass, password);
         return this;

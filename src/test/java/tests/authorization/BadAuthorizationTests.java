@@ -48,7 +48,6 @@ public class BadAuthorizationTests extends BaseTest {
                 .errorMsgField2(REG_EX_THIRD_AUTHORIZATION_FAIL);
     }
 
-
 }
 
 

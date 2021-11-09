@@ -17,8 +17,6 @@ public class BaseTest {
     protected BasePage basepage = new BasePage();
     protected AuthorizationPage authorizationPage = new AuthorizationPage();
 
-
-
     @AfterAll
     void close() {
         if (HOLD_BROWSER_OPEN) {
@@ -26,7 +24,4 @@ public class BaseTest {
 
         }
     }
-
-
-
 }

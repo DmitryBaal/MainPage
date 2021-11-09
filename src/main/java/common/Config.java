@@ -14,7 +14,7 @@ public class Config {
 
     static {
         Configuration.browser = BROWSER;
-       // Configuration.startMaximized(true);
+        // Configuration.startMaximized(true);
     }
 
 

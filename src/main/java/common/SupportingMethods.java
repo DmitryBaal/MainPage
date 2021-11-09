@@ -24,7 +24,7 @@ public class SupportingMethods {
              // takenText Текст взятый из элемента на странице
             boolean resultat=false;
             Pattern pattern = Pattern.compile(regExpression); //Регулярное выражение
-            Matcher matcher = pattern.matcher(takenText);
+            Matcher matcher = pattern.matcher(takenText); //сравнение
             while (matcher.find()) {
                 receivedText = takenText.substring(matcher.start(), matcher.end());
             }

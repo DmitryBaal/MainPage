@@ -9,10 +9,11 @@ import static constants.Constants.AuthorizationTestData.AUTHORIZATION_LOGIN;
 import static constants.Constants.AuthorizationTestData.INVALID_PASSWORD;
 import static constants.Constants.ErrorsMessages.FIRST_AUTHORIZATION_FAIL;
 import static constants.Constants.ErrorsMessages.REG_EX_THIRD_AUTHORIZATION_FAIL;
+import static constants.Constants.ErrorsMessages.REG_EX_SECOND_AUTHORIZATION_FAIL;
 import static constants.Constants.Urls.AUTHORIZATION_PAGE_URL;
 
 
-public class FirstBadAuthorizationTest extends BaseTest {
+public class BadAuthorizationTests extends BaseTest {
 
     @Test
     @Order(1)
@@ -43,7 +44,7 @@ public class FirstBadAuthorizationTest extends BaseTest {
                 .inputLogin(AUTHORIZATION_LOGIN)
                 .inputPass(INVALID_PASSWORD)
                 .selectButtonLogin()
-                .errorMsgExperiment(REG_EX_THIRD_AUTHORIZATION_FAIL);
+                .errorMsgExperiment(REG_EX_SECOND_AUTHORIZATION_FAIL);
     }
 
     @Test
@@ -56,6 +57,8 @@ public class FirstBadAuthorizationTest extends BaseTest {
                 .selectButtonLogin()
                 .errorMsgExperiment(REG_EX_THIRD_AUTHORIZATION_FAIL);
     }
+
+
 
 }
 

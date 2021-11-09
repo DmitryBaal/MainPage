@@ -10,11 +10,6 @@ import org.openqa.selenium.WebElement;
 
 import pages.base.BasePage;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static constants.Constants.ErrorsMessages.*;
-
 public class AuthorizationPage extends BasePage {
 
     public AuthorizationPage(WebDriver driver) {
@@ -25,7 +20,7 @@ public class AuthorizationPage extends BasePage {
     private final By inputPass = By.cssSelector("input[name=txtPassword]");
     private final By buttonLogin = By.cssSelector("div#btnLoginStandard.btn");
     private final By errorMsgField = By.cssSelector("div#errMessage.errmsg");
-   // private final By errorMsgField3 = By.cssSelector("div#errMessage.errmsg.login-password");
+    private final By errorMsgField2 = By.cssSelector("div#errMessage.errmsg.login-password");
 
     /**
      * Input login
@@ -71,7 +66,8 @@ public class AuthorizationPage extends BasePage {
      * @return
      */
     public AuthorizationPage errorMsgField(String msgText) {
-        waitElementIsVisible(driver.findElement(errorMsgField));
+        waitImplicit();
+    //    waitElementIsVisible(driver.findElement(errorMsgField));
         WebElement details = driver.findElement(errorMsgField);
         Assertions.assertEquals(msgText, details.getText());
         return this;
@@ -85,8 +81,9 @@ public class AuthorizationPage extends BasePage {
      * @return
      */
     public AuthorizationPage errorMsgExperiment(String regExpression){
-        waitElementIsVisible(driver.findElement(errorMsgField));
-        WebElement details = driver.findElement(errorMsgField);
+        waitImplicit();
+        waitElementIsVisible(driver.findElement(errorMsgField2));
+        WebElement details = driver.findElement(errorMsgField2);
         Assertions.assertTrue(SupportingMethods.RegExFindElement.regExFind(details.getText(), null,regExpression));
         return this;
     }

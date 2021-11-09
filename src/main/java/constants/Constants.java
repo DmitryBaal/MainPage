@@ -13,7 +13,7 @@ public class Constants {
     }
     public static class AuthorizationTestData {
         public static final String AUTHORIZATION_LOGIN = SupportingMethods.RandomWord.generateRandomString(8);
-       // public static final String AUTHORIZATION_LOGIN = "TESTERmkb14";
+       // public static final String AUTHORIZATION_LOGIN = "TESTERmkb";
         public static final String INVALID_PASSWORD = "!Q2w3e4r";
     }
 

@@ -1,9 +1,7 @@
 package tests.base;
 
 import common.CommonActions;
-import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.*;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.authorization.AuthorizationPage;
@@ -35,7 +33,6 @@ public class BaseTest {
     void close(){
         if(CLOSE_BROWSER){
             driver.close();
-
         }
     }
 }

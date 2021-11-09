@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-
 import java.util.concurrent.TimeUnit;
-
 import static common.Config.BROWSER;
 import static constants.Constants.TimeoutVariables.IMPLICIT_WAIT;
 

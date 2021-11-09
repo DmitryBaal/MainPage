@@ -4,7 +4,6 @@ package tests.authorization;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import tests.base.BaseTest;
-
 import static constants.Constants.AuthorizationTestData.AUTHORIZATION_LOGIN;
 import static constants.Constants.AuthorizationTestData.INVALID_PASSWORD;
 import static constants.Constants.ErrorsMessages.*;
@@ -26,5 +25,4 @@ public class SecondBadAuthorizationTest extends BaseTest {
                 .selectButtonLogin();
         authorizationPage.errorMsgExperiment(REG_EX_THIRD_AUTHORIZATION_FAIL);
     }
-
 }

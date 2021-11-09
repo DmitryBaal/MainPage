@@ -16,5 +16,4 @@ public class Config {
      * Keep browser open after tests
      */
     public static final Boolean CLOSE_BROWSER = false;
-
 }

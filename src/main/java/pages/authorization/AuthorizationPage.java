@@ -90,8 +90,5 @@ public class AuthorizationPage extends BasePage {
         Assertions.assertTrue(SupportingMethods.RegExFindElement.regExFind(details.getText(), null,regExpression));
         return this;
     }
-
-
-
 }
 

@@ -21,7 +21,7 @@ public class SupportingMethods {
 
     public class RegExFindElement {
         public static boolean regExFind(String takenText, String receivedText, String regExpression){
-               // takenText Текст взятый из элемента на странице
+            // takenText Текст взятый из элемента на странице
             boolean resultat=false;
             Pattern pattern = Pattern.compile(regExpression); //Регулярное выражение
             Matcher matcher = pattern.matcher(takenText);
@@ -39,7 +39,6 @@ public class SupportingMethods {
                     System.out.println("Actual: " + receivedText);}
             }
             return resultat;
-
         }
     }
 

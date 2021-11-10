@@ -1,3 +1,4 @@
+/*
 package tests.authorization;
 
 
@@ -26,3 +27,4 @@ public class SecondBadAuthorizationTest extends BaseTest {
         authorizationPage.errorMsgExperiment(REG_EX_THIRD_AUTHORIZATION_FAIL);
     }
 }
+*/

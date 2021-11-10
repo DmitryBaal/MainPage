@@ -11,7 +11,7 @@ import static constants.Constants.ErrorsMessages.*;
 import static constants.Constants.Urls.AUTHORIZATION_PAGE_URL;
 
 
-public class FirstBadAuthorizationTest extends BaseTest {
+public class BadAuthorizationTests extends BaseTest {
 
     @Test
     @Order(1)

@@ -5,7 +5,7 @@ import common.SupportingMethods;
 public class Constants {
 
     public static class TimeoutVariables{
-        public static final int IMPLICIT_WAIT = 10;
+        public static final int IMPLICIT_WAIT = 25;
         public static final int EXPLICIT_WAIT = 15;
     }
     public static class Urls{

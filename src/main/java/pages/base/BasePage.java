@@ -24,16 +24,4 @@ public class BasePage {
         new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
     }
 
-    /** Wait */
-public void waitImplicit (){
-        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);;
-}
-
-
-
-
-
-
-
-
 }
